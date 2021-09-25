@@ -53,9 +53,6 @@ export default {
   left: 0;
   z-index: 50;
   padding-top: 34px;
-
-  &__container {
-  }
   &__logo {
     min-height: 37px;
     position: relative;

@@ -8,6 +8,7 @@
     <Recall />
     <Started />
     <Cards />
+    <Footer />
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import Features from "@/components/Features";
 import Recall from "@/components/Recall";
 import Started from "@/components/Started";
 import Cards from "@/components/Cards";
+import Footer from "@/components/Footer";
 
 export default {
   name: "App",
@@ -33,6 +35,7 @@ export default {
     Recall,
     Started,
     Cards,
+    Footer,
   },
 };
 </script>
@@ -121,8 +124,6 @@ select {
 }
 .menu__list {
   display: flex;
-}
-.button {
 }
 
 ._img {
