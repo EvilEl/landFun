@@ -94,39 +94,77 @@ export default {
   &__img {
     max-width: 80px;
     height: 80px;
+    @media (max-width: 400px) {
+      max-width: 60px;
+      height: 60px;
+    }
   }
   &__title {
     max-width: 491px;
+    @media (max-width: 768px) {
+      font-size: 29px !important;
+      max-width: 320px;
+    }
+    @media (max-width: 400px) {
+      font-size: 25px !important;
+      max-width: 290px;
+    }
   }
   &__subtitle {
     max-width: 768px;
+    @media (max-width: 768px) {
+      font-size: 12px;
+      max-width: 290px;
+    }
+    @media (max-width: 400px) {
+      font-size: 8px;
+      max-width: 290px;
+    }
   }
   &__column {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -37.5px;
+    @media (max-width: 1129px) {
+      margin: 0;
+    }
   }
   &__item {
     flex: 0 1 33.3333%;
     position: relative;
     padding: 0 37.5px;
+
+    @media (max-width: 1129px) {
+      flex: 0 1 50%;
+      padding: 0;
+    }
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+    }
     &--margin {
       &:nth-child(n) {
         margin-bottom: 50px;
       }
-      &:nth-last-child(1),
-      &:nth-last-child(2),
-      &:nth-last-child(3) {
-        margin-bottom: 0;
+      @media (min-width: 1129px) {
+        &:nth-last-child(1),
+        &:nth-last-child(2),
+        &:nth-last-child(3) {
+          margin-bottom: 0;
+        }
       }
     }
     &::before {
       content: "";
       position: absolute;
       bottom: 0;
-      left: 0;
       width: calc(100% - 240px / 2);
       left: calc(50% - 260px / 2);
+      @media (max-width: 1129px) {
+        width: calc(100% - 400px / 2);
+        margin: auto;
+        left: 0;
+        right: 0;
+      }
       background: linear-gradient(
         90deg,
         rgba(53, 175, 191, 0) 0%,
