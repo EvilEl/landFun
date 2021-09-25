@@ -91,6 +91,8 @@ export default {
     display: block;
     text-decoration: none;
     flex: 0 1 18.1%;
+    position: relative;
+    z-index: 1;
     &:hover {
       .card__btn {
         .ui-btn {
