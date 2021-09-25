@@ -67,10 +67,22 @@ export default {
 </script>
 <style lang="scss">
 .card {
-  padding: 79px 0 49px 0;
+  padding: 79px 0 0 0;
   background: #2c353e;
+
   &__column {
     display: flex;
+    position: relative;
+    padding-bottom: 49px !important;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px solid #4b4b4b;
+    }
     & > *:not(:last-child) {
       margin-right: 85px;
     }
