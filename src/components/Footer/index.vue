@@ -62,6 +62,12 @@ export default {
   &__box {
     display: flex;
     align-items: center;
+    @media (max-width: 720px) {
+      flex-wrap: wrap;
+      & > *:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
   }
   &__list {
     flex: 1 1 auto;
@@ -70,9 +76,22 @@ export default {
     & > *:not(:first-child) {
       margin-left: 35px;
     }
+
+    @media (max-width: 720px) {
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+      margin: 0 -20px;
+      & > *:not(:first-child) {
+        margin-left: 0px;
+      }
+    }
     &-item {
       list-style: none;
       max-width: 152px;
+      @media (max-width: 720px) {
+        padding: 0 20px;
+        max-width: 200px;
+      }
     }
     &-item:hover &-link {
       color: #3068a1;
@@ -83,10 +102,16 @@ export default {
       line-height: 160%;
       color: #ffffff;
       transition: color 0.2s ease-in;
+      @media (max-width: 720px) {
+        font-size: 14px;
+      }
     }
   }
   &__social {
     display: flex;
+    @media (max-width: 720px) {
+      flex: 1 1 100%;
+    }
     & > *:not(:first-child) {
       margin-left: 40px;
     }
@@ -101,6 +126,9 @@ export default {
     color: #ffffff;
     opacity: 0.6;
     max-width: 400px;
+    @media (max-width: 720px) {
+      margin-top: 20px;
+    }
   }
 }
 </style>
