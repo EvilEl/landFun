@@ -69,17 +69,37 @@ export default {
     font-size: 38px;
     line-height: calc(45 / 38 * 100%);
     color: #252626;
+    @media (max-width: 720px) {
+      font-size: 30px !important;
+    }
+    @media (max-width: 400px) {
+      font-size: 25px !important;
+    }
+  }
+  &__subtitle {
+    @media (max-width: 720px) {
+      font-size: 14px !important;
+      max-width: 280px;
+    }
   }
   &__column {
     margin: 0 -15px;
     display: flex;
+    @media (max-width: 992px) {
+      flex-wrap: wrap;
+    }
   }
   &__item {
     padding: 0 15px;
-    flex: 0 0 25%;
+    flex: 0 1 25%;
     height: 100%;
     border-radius: 10px;
-
+    @media (max-width: 992px) {
+      flex: 0 1 50%;
+    }
+    @media (max-width: 540px) {
+      flex: 1 1 100%;
+    }
     transition: all 0.2s ease-in-out;
     &:hover {
       background: url("~@/assets/services/5.png");
@@ -99,6 +119,7 @@ export default {
       flex: 1 1 auto;
       flex-direction: column;
     }
+
     &-image ._img img {
       position: absolute;
       top: 0;

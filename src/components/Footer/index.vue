@@ -70,7 +70,7 @@ export default {
     }
   }
   &__list {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
     display: flex;
     padding: 0;
     & > *:not(:first-child) {
@@ -78,7 +78,7 @@ export default {
     }
 
     @media (max-width: 720px) {
-      flex: 1 1 auto;
+      flex: 0 1 auto;
       flex-wrap: wrap;
       margin: 0 -20px;
       & > *:not(:first-child) {

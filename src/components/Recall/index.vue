@@ -59,6 +59,14 @@ export default {};
     line-height: 140%;
     text-align: center;
     color: #4b4c4c;
+    @media (max-width: 920px) {
+      font-size: 25px;
+      max-width: 600px;
+    }
+    @media (max-width: 471px) {
+      font-size: 20px;
+      max-width: 280px;
+    }
   }
   &__box {
     margin-top: 35px;
