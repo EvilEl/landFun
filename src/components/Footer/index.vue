@@ -78,7 +78,7 @@ export default {
     }
 
     @media (max-width: 720px) {
-      flex: 0 1 auto;
+      flex: 0 1 100%;
       flex-wrap: wrap;
       margin: 0 -20px;
       & > *:not(:first-child) {
