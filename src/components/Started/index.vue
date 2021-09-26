@@ -24,6 +24,9 @@ export default {
 <style lang="scss">
 .started {
   padding: 120px 0;
+  @media (max-width: 500px) {
+    padding: 60px 0;
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -33,6 +36,8 @@ export default {
   &__title {
     max-width: 854px;
     text-align: center;
+    @media (max-width: 920px) {
+    }
   }
   &__button {
     margin-top: 35px;

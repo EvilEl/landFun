@@ -135,6 +135,14 @@ select {
   font-size: 38px;
   line-height: calc(45 / 38 * 100%);
   color: #252626;
+  @media (max-width: 920px) {
+    font-size: 30px;
+    max-width: 600px;
+  }
+  @media (max-width: 920px) {
+    font-size: 25px;
+    max-width: 500px;
+  }
 }
 .subtitle {
   font-style: normal;
