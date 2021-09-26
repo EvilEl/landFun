@@ -3,20 +3,22 @@
     <div class="card__container _container">
       <div class="card__column">
         <a href="/" class="card__item" v-for="card in cardData" :key="card.type">
-          <div class="card__body">
-            <div class="card__body-tarif">{{card.type}}</div>
-            <div class="card__body-price">
-              <span class="card__body-price-dol">$</span>
-              {{card.price}}
-              <span class="card__body-price-mon">/mo</span>
+          <div class="card__column-body">
+            <div class="card__body">
+              <div class="card__body-tarif">{{card.type}}</div>
+              <div class="card__body-price">
+                <span class="card__body-price-dol">$</span>
+                {{card.price}}
+                <span class="card__body-price-mon">/mo</span>
+              </div>
+              <div class="card__body-psd card__body-text">{{card.psd}}</div>
+              <div class="card__body-support card__body-text">{{card.support}}</div>
+              <div class="card__body-install card__body-text">{{card.insstall}}</div>
+              <div class="card__body-element card__body-text">{{card.element}}</div>
             </div>
-            <div class="card__body-psd card__body-text">{{card.psd}}</div>
-            <div class="card__body-support card__body-text">{{card.support}}</div>
-            <div class="card__body-install card__body-text">{{card.insstall}}</div>
-            <div class="card__body-element card__body-text">{{card.element}}</div>
-          </div>
-          <div class="card__button">
-            <UiButton class="card__btn" :widthButton="138" :heightButton="49" title="Subscribe" />
+            <div class="card__button">
+              <UiButton class="card__btn" :widthButton="138" :heightButton="49" title="Subscribe" />
+            </div>
           </div>
         </a>
       </div>
@@ -72,8 +74,17 @@ export default {
 
   &__column {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     padding-bottom: 49px !important;
+    @media (max-width: 960px) {
+      margin: 0 -15px;
+    }
+    @media (max-width: 480px) {
+      & > *:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
     &::before {
       content: "";
       position: absolute;
@@ -85,14 +96,33 @@ export default {
     }
     & > *:not(:last-child) {
       margin-right: 85px;
+      @media (max-width: 960px) {
+        margin-right: 0;
+      }
+    }
+    &-body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
   }
   &__item {
-    display: block;
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     flex: 0 1 18.1%;
     position: relative;
     z-index: 1;
+    @media (max-width: 960px) {
+      flex: 0 1 50%;
+      padding: 0 15px;
+      &:nth-child(-n + 2) {
+        margin-bottom: 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      flex: 1 1 100%;
+    }
     &:hover {
       .card__btn {
         .ui-btn {
@@ -103,8 +133,13 @@ export default {
   }
   &__body {
     max-width: 206px;
+    flex: 1 1 auto;
     & > *:not(:last-child) {
       margin-bottom: 15px;
+    }
+    @media (max-width: 480px) {
+      min-width: 280px;
+      width: 100%;
     }
     &-tarif {
       font-style: normal;
